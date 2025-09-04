@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- Slider main container -->
+    <!-- 換圖輪播：Slider main container -->
     <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -37,63 +37,101 @@
         <!-- <div class="swiper-scrollbar"></div> -->
     </div>
 
-    <!-- 最新消息 -->
-    <section id="new">
-        <header class="title">
-            <h2>最新商品<span>NEW</span></h2>
-        </header>
-        <div class="list-box">
-            <!-- 咒語長這樣：div.item*3>a[href='#']>h3{NEW TITLE}+img[src="./images/new$.jpg" alt="最新商品$"] -->
-            <div class="item">
-                <a href="#">
-                    <h3>NEW TITLE</h3>
-                    <img src="./images/new1.jpg" alt="最新商品1">
-                </a>
+    <main>
+        <!-- 最新消息 -->
+        <section id="new">
+            <header class="title">
+                <h2>最新商品<span>NEW</span></h2>
+            </header>
+            <div class="list-box">
+                <!-- 咒語長這樣：div.item*3>a[href='#']>h3{NEW TITLE}+img[src="./images/new$.jpg" alt="最新商品$"] -->
+                <div class="item">
+                    <a href="#" class="mask mask-1">
+                        <h3>NEW TITLE</h3>
+                        <img src="./images/new1.jpg" alt="最新商品1">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" class="mask mask-2">
+                        <h3>NEW TITLE</h3>
+                        <img src="./images/new2.jpg" alt="最新商品2">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" class="mask mask-3">
+                        <h3>NEW TITLE</h3>
+                        <img src="./images/new3.jpg" alt="最新商品3">
+                    </a>
+                </div>
             </div>
-            <div class="item">
-                <a href="#">
-                    <h3>NEW TITLE</h3>
-                    <img src="./images/new2.jpg" alt="最新商品2">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <h3>NEW TITLE</h3>
-                    <img src="./images/new3.jpg" alt="最新商品3">
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 熱門商品 -->
-    <section id="hot">
-        <header class="title">
-            <h2>熱門商品<span>NEW</span></h2>
-        </header>
-        <div class="list-box">
-            <!-- div.item*3>a[href='#']>h3{HOT TITLE}+img[src="./images/hot$.jpg" alt="熱門商品$"] -->
-            <div class="item">
-                <a href="#">
-                    <h3>HOT TITLE</h3>
-                    <img src="./images/hot1.jpg" alt="熱門商品1">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <h3>HOT TITLE</h3>
-                    <img src="./images/hot2.jpg" alt="熱門商品2">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <h3>HOT TITLE</h3>
-                    <img src="./images/hot3.jpg" alt="熱門商品3">
-                </a>
+        <!-- 熱門商品 -->
+        <section id="hot">
+            <header class="title">
+                <h2>熱門商品<span>NEW</span></h2>
+            </header>
+            <div class="list-box">
+                <!-- div.item*3>a[href='#']>h3{HOT TITLE}+img[src="./images/hot$.jpg" alt="熱門商品$"] -->
+                <div class="item">
+                    <a href="#" class="mask clip">
+                        <h3>HOT TITLE</h3>
+                        <img src="./images/hot1.jpg" alt="熱門商品1">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" class="mask clip">
+                        <h3>HOT TITLE</h3>
+                        <img src="./images/hot2.jpg" alt="熱門商品2">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" class="mask clip">
+                        <h3>HOT TITLE</h3>
+                        <img src="./images/hot3.jpg" alt="熱門商品3">
+                    </a>
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- 線上商店 -->
+        <section id="shop">
+            <header class="title">
+                <h2>線上商店<span>SHOP</span></h2>
+            </header>
+            <!-- 使用grid排版 -->
+            <div class="container">
+                <!-- 咒語：div.s$*6>h3 -->
+                <a href="#" class="s1">
+                    <h3>線上商店活動</h3>
+                </a>
+                <a href="#" class="s2">
+                    <h3>車輛配件</h3>
+                </a>
+                <a href="#" class="s3">
+                    <!-- 這個要跨欄(column)顯示 -->
+                    <h3>預約安裝服務</h3>
+                </a>
+                <a href="#" class="s4">
+                    <!-- 這個要跨行(row)顯示 -->
+                    <h3>充電</h3>
+                </a>
+                <a href="#" class="s5">
+                    <h3>服飾</h3>
+                </a>
+                <a href="#" class="s6">
+                    <h3>生活時尚</h3>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        copyright &copy; 2025 特斯拉Tesla.</footer>
+
     <!-- Swiper js CDN：https://swiperjs.com/get-started -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

@@ -1,6 +1,8 @@
 @use 'reset';
 @use 'variables' as *;
+@use 'function';
 
+// 這邊以下都是別人的套件
 .swiper {
     width: 100%;
     height: 100vh;
@@ -34,6 +36,9 @@
     width: 40%;
 }
 
+// 這邊以上都是別人的套件
+
+// 以下是自己寫的
 // 共用區
 section {
     width: 80%;
@@ -48,12 +53,12 @@ section {
         display: flex;
         align-items: center;
         font-size: $f-s-xl;
-        border-left: solid 5px $Charcoal;
-        padding-left: $space-sm;
+        border-left: solid 5px $Charcoal; //裝飾線
+        padding-left: $space-sm; //讓裝飾線和商品分開
 
         span {
             font-size: $f-s-sm;
-            padding-left: $space-xs;
+            padding-left: $space-xs; //讓字分開不要貼邊
         }
 
         &::after {
@@ -78,7 +83,146 @@ section {
 
             h3 {
                 position: absolute;
+                background-color: $alpha-b-60;
+                width: 100%;
+                height: 100%;
+                color: $White;
+                font-size: $f-s-xl;
+                @extend %flex-center;
+                opacity: 0;
+                transition: $speed-fast;
+
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }
+}
+
+//NEW 最新商品區
+#new {
+    .mask {
+        //遮罩可以看講義45頁之後：https://drive.google.com/file/d/1yNI5iVgdU8UknrGl1QIu_w0YOFxXQ2LA/view
+        //遮罩方法1：直接匯入圖片
+        mask-size: contain; //完整顯示
+        mask-repeat: no-repeat; //圖片才不會露餡
+        mask-position: center;
+    }
+
+    .mask-1 {
+        mask-image: url(../images/blobs-1.svg);
+    }
+
+    .mask-2 {
+        mask-image: url(../images/blobs-2.svg);
+    }
+
+    .mask-3 {
+        mask-image: url(../images/blobs-3.svg);
+    }
+}
+
+//hot 熱門商品區
+#hot {
+    .clip {
+        //遮罩方法2：在圖片用 剪裁遮色片 玩耍
+        //圓形 clip-path: circle(30%); //50% = 容器一樣尺寸
+
+        //橢圓形 clip-path: ellipse(25% 40% at 50% 50%);
+        //w h 50% = 容器一樣尺寸,以x y軸形狀中心為0，50%則為置中
+
+        //多邊形 設置多點的xy位置
+        //三角形 clip-path: polygon(50% 0%,0% 100%, 100% 100%);
+        //六邊形 
+        clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+
+        //矩形 較常用以作為圖片剪裁使用
+        //clip-path: inset(5% 20% 15% 10%);
+    }
+}
+
+#shop {
+    .container {
+        display: grid; //我們需要2欄4列
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr); //2欄，寬度均分
+        grid-template-rows: repeat(4, 320px); //4列，320px
+
+        >a {
+            font-size: $f-s-lg;
+            font-weight: $f-w-b;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            padding: 50px;
+        }
+
+        .s1 {
+            background-image: url(../images/shop_1.png);
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s2 {
+            background-image: url(../images/shop_2.png);
+
+            justify-content: center;
+            align-items: center;
+            color: $White;
+        }
+
+        .s3 {
+            background-image: url(../images/shop_3.png);
+
+            justify-content: flex-end;
+            align-items: center;
+
+            // grid-column: 1/span2; //從第一個網格線開始跨2欄
+            grid-column: 1/3;
+        }
+
+        .s4 {
+            background-image: url(../images/shop_4.png);
+
+            justify-content: center;
+
+            // grid-row: 3/span2; //從第三個網格線開始跨2欄
+            grid-row: 3/5;
+        }
+
+        .s5 {
+            background-image: url(../images/shop_5.png);
+
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .s6 {
+            background-image: url(../images/shop_6.png);
+
+            align-items: center;
+        }
+    }
+}
+
+//detail.html
+.detail-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 3fr 2fr;
+}
+
+// jquery UI tabs 獨立出來寫才抓得到
+.ui-tabs .ui-tabs-nav {
+            display: flex;}
+
+
+footer {
+    line-height: 50px;
+    text-align: center;
+    background-color: $Black;
+    color: $White;
+    margin-top: $space-lg;
 }
